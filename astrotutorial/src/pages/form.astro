@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+let title="My Form Page"
+---
+
+<BaseLayout title={ title }>
+    <h1>Choose a colour</h1>
+
+<form method="post">
+  <button type="button" onclick="changeBodyBg('red');">Red</button>
+  <button type="button" onclick="changeBodyBg('orange');">Orange</button>
+  <button type="button" onclick="changeBodyBg('yellow');">Yellow</button>
+  <button type="button" onclick="changeBodyBg('green');">Green</button>
+  <button type="button" onclick="changeBodyBg('blue');">Blue</button>
+  <button type="button" onclick="changeBodyBg('purple');">Purple</button>
+  <button type="button" onclick="changeBodyBg('pink');">Pink</button><br>
+  <label for="hex">Or type in a hex code (e.g: #ba9bff):</label>
+    <input type="text" id="hex" name="hex"><input type="submit" onclick="changeBodyBg('hex');">
+</form>
+
+<script>
+function changeBodyBg(color)
+{
+
+    document.body.style.background = color;                 
+}
+</script>
+
+</BaseLayout>
+
