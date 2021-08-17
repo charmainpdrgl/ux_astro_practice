@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+let title="Form"
+---
+
+<BaseLayout title={ title }>
+<h1>Find Your Birthstone</h1>
+    <form>
+    <ul>
+    <li>
+        <label for="birthmonth">Enter your birth month (all lower case!!):</label>
+        <input type="text" id="birthmonth" name="birthmonth">
+    </li>
+    </ul>
+    </form>
+    <input style="width:100px; height: 40px; margin-left:100px;" id="submit" type="submit" value="Post" onclick="results();" />
+    <div style="display:inline"><h1>Your birthstone: </h1><h1 id="display"></h1></div>
+
+    <script>
+        function results()
+        {
+            var month = document.getElementById('birthmonth').value;
+            // month.toLowerCase();
+            var result;
+            switch(month) {
+                case 'january':
+                    result = 'Garnet';
+                    break;
+                
+                case 'february':
+                    result = 'Amethyst';
+                    break;
+
+                case 'march':
+                    result = 'Aquamarine';
+                    break;
+
+                case 'april':
+                    result = 'Diamond';
+                    break;
+
+                case 'may':
+                    result = 'Emerald';
+                    break;
+
+                case 'june':
+                    result = 'Pearl';
+                    break;
+
+                case 'july':
+                    result = 'Ruby';
+                    break;
+
+                case 'august':
+                    result = 'Peridot';
+                    break;
+
+                case 'september':
+                    result = 'Sapphire';
+                    break;
+
+                case 'october':
+                    result = 'Opal';
+                    break;
+
+                case 'november':
+                    result = 'Yellow Topaz';
+                    break;
+
+                case 'december':
+                    result = 'Blue Topaz';
+                    break;
+                }
+            display.innerHTML = result;
+        }
+    </script>
+
+</BaseLayout>
+
